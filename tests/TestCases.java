@@ -40,17 +40,18 @@ public class TestCases {
 	}
 	
 
-//	@Test
-//	public void TC1() throws InterruptedException  {
-//		//get the hedaertext
-//		
-//		String headerText= driver.findElement(By.className("click-before-outline")).getText();
-//	//comparing the actual value with expected vale
-//		assertEquals("Subscribe to My McD’s®",headerText);
-//		
-//		
-//	}
-//	
+	@Test
+	public void TC1() throws InterruptedException  {
+		//get the headertext
+		
+		String headerText= driver.findElement(By.className("click-before-outline")).getText();
+	//comparing the actual value with expected vale
+		assertEquals("Subscribe to My McD’s®",headerText);
+		System.out.println("TitleText "+ headerText);
+		
+		
+	}
+	
 	
 	
 	@Test
@@ -68,12 +69,13 @@ public class TestCases {
 	//get the postalcode input box by id
 	WebElement postalCode = driver.findElement(By.id("postalcode2"));
 	//send keys
-	postalCode.sendKeys(" M3A ");
+	postalCode.sendKeys("  M3A");
 	//automatically clicking the button
 	WebElement autoClick = driver.findElement(
 	By.id("g-recaptcha-btn-2"));
 	
 	autoClick.click();
+	
 	
 	//auto click the verify button pop-up
 	
@@ -81,11 +83,11 @@ public class TestCases {
 //			By.className("rc-button-default goog-inline-block"));
 //			
 //	verifyButtonClick.click();
-	
-	WebDriverWait wait = new WebDriverWait(driver, 30);
-	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[@id=\"recaptcha-verify-button\"]")));
-	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("\"recaptcha-verify-button\"")));
-	element.click();
+//	//
+//	WebDriverWait wait = new WebDriverWait(driver, 30);
+//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[@id=\"recaptcha-verify-button\"]")));
+//	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("\"recaptcha-verify-button\"")));
+//	element.click();
 	
 	
 	
@@ -95,41 +97,41 @@ public class TestCases {
 	
 	
 	
-//	@Test
-//	public void NegativePath() throws InterruptedException{
-//		
-//	//get the firstname input box by id 		
-//
-//	WebElement nameBox = driver.findElement(By.id("firstname2"));
-//	//get the firstname input box by id 		
-//
-//	nameBox.sendKeys("");
-////	String name = firstname.getText();
-//	//get the email input box by id
-//	String name = nameBox.getText();
-//	
-//	WebElement email = driver.findElement(By.id("email2"));
-//	//send email text
-//	email.sendKeys("");
-//	//get the postalcode input box by id
-//
-//	WebElement postalCode = driver.findElement(By.id("postalcode2"));
-//	postalCode.sendKeys("   ");
-//	
-//	
-//	
-//	
-//	
-//	//automatically clicking the button
-//     WebElement autoclick = driver.findElement(
-//	By.id("g-recaptcha-btn-2"));
-//	autoclick.click();
-//	
-//	
-//	
-//	
-//	}
-//	
+	@Test
+	public void NegativePath() throws InterruptedException{
+		
+	//get the firstname input box by id 		
+
+	WebElement nameBox = driver.findElement(By.id("firstname2"));
+	//get the firstname input box by id 		
+
+	nameBox.sendKeys("");
+//	String name = firstname.getText();
+	//get the email input box by id
+	String name = nameBox.getText();
+	
+	WebElement email = driver.findElement(By.id("email2"));
+	//send email text
+	email.sendKeys("");
+	//get the postalcode input box by id
+
+	WebElement postalCode = driver.findElement(By.id("postalcode2"));
+	postalCode.sendKeys("   ");
+	
+	
+	
+	
+	
+	//automatically clicking the button
+     WebElement autoclick = driver.findElement(
+	By.id("g-recaptcha-btn-2"));
+	autoclick.click();
+	
+	
+	
+	
+	}
+	
 	
 	
 	
