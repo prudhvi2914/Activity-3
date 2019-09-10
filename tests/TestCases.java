@@ -60,7 +60,7 @@ public class TestCases {
 	
 	
 	@Test
-	public void TC2() throws InterruptedException{
+	public void happyPath() throws InterruptedException{
 		//get the firstname input box by id 		
 	WebElement firstname = driver.findElement(By.id("firstname2"));
 	//send the input text
@@ -79,20 +79,54 @@ public class TestCases {
 	By.id("g-recaptcha-btn-2"));
 	
 	autoClick.click();
+	
+	//auto click the verify button pop-up
+	
+//	WebElement verifyButtonClick = driver.findElement(
+//			By.className("rc-button-default goog-inline-block"));
+//			
+//	verifyButtonClick.click();
+	
+	
+	
 	}
 
 
 	
 	
 	
+	@Test
+	public void NegativePath() throws InterruptedException{
+		
+	//get the firstname input box by id 		
+
+	WebElement nameBox = driver.findElement(By.id("firstname2"));
+	//get the firstname input box by id 		
+
+	nameBox.sendKeys("");
+//	String name = firstname.getText();
+	//get the email input box by id
+	String name = nameBox.getText();
+	
+	WebElement email = driver.findElement(By.id("email2"));
+	//send email text
+	email.sendKeys("");
+	//get the postalcode input box by id
+
+	WebElement postalCode = driver.findElement(By.id("postalcode2"));
+	postalCode.sendKeys("   ");
+	//automatically clicking the button
+
+	
+	
+	WebElement autoclick = driver.findElement(
+	By.id("g-recaptcha-btn-2"));
+	autoclick.click();
 	
 	
 	
-//	@Test
-//	public void test() {
-//		fail("Not yet implemented");
-//	}
 	
+	}
 	
 	
 	
